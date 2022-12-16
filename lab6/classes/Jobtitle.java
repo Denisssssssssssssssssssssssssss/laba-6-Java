@@ -35,7 +35,7 @@ public class Jobtitle implements Cloneable {
         }
     }
 
- /** Метод установки значений **/
+    /** Метод установки значений **/
     public void set(Jobtitle j){
         this.jtitle = j.jtitle;
         this.monthlycost = j.monthlycost;
@@ -62,7 +62,7 @@ public class Jobtitle implements Cloneable {
         System.out.println("Должность: " + jtitle);
         System.out.println("Стоимость месяца работы: " + monthlycost);
     }
-//метод возвращения значения
+    //метод возвращения значения
     public int getmonthlycost(){return monthlycost;}
 
     //метод для редактирования должности
@@ -80,8 +80,8 @@ public class Jobtitle implements Cloneable {
         }
         this.jtitle = sb.toString();
     }
-}
-  public void tofile(File file){
+
+    public void tofile(File file){
         try {
             checkfilename cf= new checkfilename();
             if(!cf.checkfileextension(file.getName()))
@@ -90,7 +90,7 @@ public class Jobtitle implements Cloneable {
             pw.write(jtitle + "\n");
             pw.write(monthlycost + "\n");
             pw.close();
-            subs.tofile(file);
+
         }
         catch(Exception e){
             System.out.println(e);
@@ -105,18 +105,18 @@ public class Jobtitle implements Cloneable {
                 throw new Exception("Использовано недопустимое расширение файла. Допустимое расширение: \".txt\".");
             jtitle = sc.nextLine();
             monthlycost = Integer.parseInt(sc.nextLine());
-            subs.getfromfile(file, sc);
+
         }
         catch(Exception e){
             System.out.println(e);
         }
     }
-     @Override
+    @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 
-     public Object deepclone() throws CloneNotSupportedException {
+    public Object deepclone() throws CloneNotSupportedException {
         Jobtitle jt = (Jobtitle) super.clone();
         return jt;
     }

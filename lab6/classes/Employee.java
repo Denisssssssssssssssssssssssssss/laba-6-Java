@@ -33,13 +33,13 @@ public class Employee {
             transport = new Transport(allfields);
             equipment = new Equipment(allfields);
             jobtitle = new Jobtitle(allfields);
-            weapon = new Weapon(allfields);
+            weapon = new Meleeweapon(allfields);
         }
         else{
             transport = new Transport();
             equipment = new Equipment();
             jobtitle = new Jobtitle();
-            weapon = new Weapon();
+            weapon = new Meleeweapon();
         }
     }
 
@@ -50,7 +50,7 @@ public class Employee {
         transport = new Transport();
         equipment = new Equipment();
         jobtitle = new Jobtitle();
-        weapon = new Weapon();
+        weapon = new Meleeweapon();
     }
 
     //метод вывода

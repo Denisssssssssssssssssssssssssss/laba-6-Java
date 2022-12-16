@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class Weapon {
+public abstract class Weapon implements GetString {
 
     //поля класса
     private String weptitle; //наименование вооружения
@@ -62,7 +62,6 @@ public class Weapon {
             pw.write(weptitle + "\n");
             pw.write(wepcost + "\n");
             pw.close();
-            subs.tofile(file);
         }
         catch(Exception e){
             System.out.println(e);
@@ -77,10 +76,22 @@ public class Weapon {
                 throw new Exception("Использовано недопустимое расширение файла. Допустимое расширение: \".txt\".");
             weptitle = sc.nextLine();
             wepcost = Integer.parseInt(sc.nextLine());
-            subs.getfromfile(file, sc);
         }
         catch(Exception e){
             System.out.println(e);
         }
     }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("weptitle = ");
+        sb.append(weptitle);
+        sb.append("wepcost = ");
+        sb.append(wepcost);
+        return sb.toString();
+    }
+
 }
+
+
+

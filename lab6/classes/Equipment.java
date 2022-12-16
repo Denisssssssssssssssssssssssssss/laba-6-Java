@@ -58,7 +58,7 @@ public class Equipment {
 
     //метод возвращающий значение eqcost
     public int geteqcost(){return eqcost;}
-}
+
 
     /** Метод записи в файл **/
     public void tofile(File file){
@@ -70,7 +70,7 @@ public class Equipment {
             pw.write(eqtitle + "\n");
             pw.write(eqcost + "\n");
             pw.close();
-            subs.tofile(file);
+
         }
         catch(Exception e){
             System.out.println(e);
@@ -83,9 +83,8 @@ public class Equipment {
             checkfilename cf= new checkfilename();
             if(!cf.checkfileextension(file.getName()))
                 throw new Exception("Использовано недопустимое расширение файла. Допустимое расширение: \".txt\".");
-            eqitle = sc.nextLine();
+            eqtitle = sc.nextLine();
             eqcost = Integer.parseInt(sc.nextLine());
-            subs.getfromfile(file, sc);
         }
         catch(Exception e){
             System.out.println(e);

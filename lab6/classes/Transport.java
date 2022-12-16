@@ -51,7 +51,7 @@ public class Transport {
     }
 
     public int gettrcost(){return trcost;}
-}
+
     /** Метод записи в файл **/
     public void tofile(File file){
         try {
@@ -62,7 +62,7 @@ public class Transport {
             pw.write(trtitle + "\n");
             pw.write(trcost + "\n");
             pw.close();
-            subs.tofile(file);
+
         }
         catch(Exception e){
             System.out.println(e);
@@ -77,7 +77,7 @@ public class Transport {
                 throw new Exception("Использовано недопустимое расширение файла. Допустимое расширение: \".txt\".");
             trtitle = sc.nextLine();
             trcost = Integer.parseInt(sc.nextLine());
-            subs.getfromfile(file, sc);
+
         }
         catch(Exception e){
             System.out.println(e);
